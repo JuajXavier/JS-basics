@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+
+        body {
+            margin: 0;
+            background-color: darkgrey;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .logo img {
+            width: 160px;
+            height: 40px;
+        }
+
+        .logo img, .menu {
+            display: inline;
+        }
+
+        .menu-toggle {
+          display: none;
+          float: right;
+          margin: 0;  
+        }
+
+        nav a {
+            color: honeydew;
+            display: flex;
+            background-color: gray;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: rgb(97, 97, 180);
+        }
+
+        .autenticacao {
+            float: right;
+        }
+
+        aside a {
+            color: honeydew;
+            background-color: gray;
+            padding: 10px 20px;
+            border-radius: 60px;
+            text-decoration: none;
+
+        }
+
+        .botao {
+            background-color: rgb(197, 9, 9);
+        }
+
+        .botao:active {
+            background-color: grey;
+        }
+
+
+
+        @media (max-width: 500px) {
+        .menu-toggle {
+            display: block;
+            }
+        }
+
+        @media (max-width: 501px) {
+            .menu { display: none; }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="#inicio">
+                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+            </a>
+        </div>
+        <button class="menu-toggle">
+            <i class="fa fa-lg fa-bars"></i>
+        </button>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#inicio">Início</a>
+                </li>
+                <li>
+                    <a href="#cursos">Cursos</a>
+                </li>
+                <li>
+                    <a href="#sobre">Sobre</a>
+                </li>
+                <li>
+                    <a href="#contato">Contato</a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="autenticacao">
+            <a href="#login">Login</a>
+            <a href="#registar" class="botao destaque">Registrar</a>
+        </aside>
+    </header>
+
+    <script>
+        function chBackcolor(color) {
+            document.body.style.background = color;
+        }
+    </script>
+</body>
+
+</html>

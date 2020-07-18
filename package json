@@ -1,0 +1,3 @@
+// pra criar package.json = npm init -y (se quiser tudo padrão com yes) 
+// e npm i --save expresse@versão -E se quiser exatamente uma versão especifica
+// npm i body-parser, importantíssimo pra ler o corpo da requisição e passar pro backend

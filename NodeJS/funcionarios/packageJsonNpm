@@ -1,0 +1,2 @@
+npm start, funciona pois já é pré definido
+npm dev não, precisa por npm run dev pois foi definido depois

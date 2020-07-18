@@ -1,0 +1,110 @@
+<div wm-slider>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg"
+        alt="Muro da Cidade"
+        width="513" height="342"
+        title="Muro da Cidade por Tarso Bessa"> 
+    </p>
+    
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" 
+        alt="Intro Cod3r" height="342">
+    </p>
+    
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png" 
+        alt="Rio de Janeiro" height="342"
+        title="Rio de Janeiro">
+    </p>
+    
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" 
+        alt="Avatar" height="50" align="left"> <!-- aqui é pro avatar ficar no lado esquerdo do texto, comando align -->
+        Texto é um conjunto de palavras e frases encadeadas que permitem interpretação e transmitem uma mensagem. É qualquer obra escrita em versão original e que constitui um livro ou um documento escrito. Um texto é uma unidade linguística de extensão superior à frase
+    </p>
+    
+    <p class="cidade"></p>
+    
+    <p>
+        <picture>
+            <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png" 
+                media="(min-width: 600px)"> <!-- aqui é a logo grande até 600px -->
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="Logo"> <!-- se ficar menor que isso, vem pra logo pequena, seja diminuindo o browser ou se for uma versão mobile do site -->
+        </picture>
+    </p>
+</div>
+
+
+<style>
+    p {
+        position: absolute;
+        display: none;
+    }
+    .circular {
+        width: 513px;
+        background-color: #fff;
+    }
+
+    .texto {
+        width: 400px;
+    }
+
+    .texto img {
+        margin-right: 10px;
+    }
+
+    .cidade {
+        width: 513px;
+        height: 342px;
+        background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200%; /* zoom */
+    }
+
+</style>
+
+<script>
+    function mover(elem, inicio, fim, passo, callback) {
+        const novoInicio = inicio - passo
+        if(novoInicio >= fim) {
+            elem.style.left = novoInicio + 'px'
+            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)
+        } else {
+            callback()
+        }
+    }
+
+//    const p = document.querySelector('[wm-slider] > p')
+//  p.style.display = 'block'
+//    mover(p, 1500, -520, 5, () => {
+//        console.log('Terminou!!')
+//    })
+
+    function slider () {
+        const elementos = document.querySelectorAll('[wm-slider] > p') // todos os ps marcados com wm-slider
+        const slides = Array.from(elementos) // transformar o "pseudo-array" em array de fato = Array.from
+        exibirSlide(slides, slides[0])
+    }
+
+    function exibirSlide(slides, slide) {
+        slide.style.display = 'block'
+
+        const inicio = innerWidth // largura da pagina (?)
+        const fim = -slide.clientWidth // aqui pode por o tanto em px tbm, mas assim fica global, melhor.
+
+        slide.style.left = `${inicio}px`
+
+        mover(slide, inicio, fim, 2, () => {
+           // slide.style.display = 'none'
+            exibirSlide(slides, getProximo(slides, slide))
+        })
+    }
+
+    function getProximo(lista, atual) {
+        const i = lista.indexOf(atual) + 1 // aqui retorna o indice atual e +1 retorna o proximo
+        return i < lista.length ? lista[i] : lista[0] // se i for menor que o tamanho do array, continua correndo o array, se for igual ou maior, volta pro indice 0.
+    }
+
+    slider()
+</script> 

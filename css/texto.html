@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Texto</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <style>
+        
+        * {
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        p {
+            /* valores padrões */
+            font-size: 1em;
+            font-size: 100%;
+            font-size: 16px;
+            font-size: 12pt;
+
+            /* unidades absolutas */
+            font-size: 10vw; /* tamanho do pixel é relativo */
+
+            font-family: 'Indie Flower', cursive;
+            font-weight: 100 bold;
+            font-style: italic;
+            text-transform: uppercase;
+            /* text-decoration: overline underline line-through */
+            word-spacing: 10px;
+            letter-spacing: 20px;
+            line-height: 150px;
+            text-align: center;
+        }
+
+        .botao {
+            font-size: 28px;
+            text-decoration: none; /* tirar a underline dos links */
+            padding: 10px 30px;
+            border-radius: 25px;
+        }
+
+        .destaque {
+            color: #fff;
+            background: rgb(67, 209, 67);
+            box-shadow: 2px 2px 1px 1px rgb(80, 1, 100);
+        }
+
+        .destaque:active {
+            box-shadow: none;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>
+            Coda
+            <br>
+        </p>
+    </div>
+    <a href="http://google.com" class="botao destaque">A gente é fera</a>
+</body>
+
+</html>
